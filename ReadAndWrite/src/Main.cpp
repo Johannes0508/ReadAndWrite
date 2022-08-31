@@ -17,6 +17,7 @@ namespace lib {
 		std::string fileContent;
 		std::getline(std::cin, fileContent);
 		file << fileContent;
+		file.close();
 	}
 
 }
