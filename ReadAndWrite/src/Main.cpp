@@ -15,13 +15,23 @@ namespace lib {
 	//writes to textfile
 	void WriteToFile(std::string filePath)
 	{
-		std::ofstream file("filePath");
+		std::ofstream file(filePath);
 		std::string fileContent;
 		std::getline(std::cin, fileContent);
 		file << fileContent;
 		file.close();
 	}
-
+		
+	void ReadFromFile() 
+	{
+		std::string fileContent;
+		std::ifstream openFile("minfil.txt");
+		while (std::getline(openFile, fileContent))
+		{
+			std::cout << "Filecontent: " << fileContent << "\n";
+		}
+		openFile.close();
+	}
 }
 
 
@@ -29,5 +39,6 @@ int main()
 {
 	lib::print("hej");
 	lib::WriteToFile("minfil.txt");
+	lib::ReadFromFile();
 
 }
